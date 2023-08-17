@@ -9,33 +9,30 @@
 </head>
 
 <body>
-
-    <div class="start-screen">
-        <button id="start-button">Start</button>
-    </div>
-    <div id="display-container">
-        <div class="header">
-            <div class="number-of-count">
-                <span class="number-of-count">
-                   1 of 10 questions
-
-                </span>
-            </div>
-            <div class="timer-div">
-                <span class="time-left">10s</span>
-            </div>
+    <div class="container">
+        <div id="start-screen">
+            <h1>This is a quiz for coding!</h1>
+            <button id="start-button">Start</button>
+            <button id="startPageHighscore" onclick="showHighscore()">Highscores</button>
         </div>
-        <div id="container">
-            <!-- questions and choices go here2 -->
+        <div id="quiz">
+            <div id="timer">Time remaining: </div>
+            <div id="questions">
+                <p>Questions Placeholder</p>
+            </div>
+            <button id="a" onclick="checkAnswer('a')">A</button>
+            <button id="b" onclick="checkAnswer('b')">B</button>
+            <button id="c" onclick="checkAnswer('c')">C</button>
         </div>
-        <button id="next-button">Next</button>
-    </div>
-    <div class="score-container hide">
-        <div id="user-score">Demo Score</div>
-        <button id="restart">Restart</button>
-    </div>
-   
-    <script src="script.js"></script>
+            <div id="endgame">
+
+                <div id="finalScore"></div>
+                <input type="text"  placeholder="Enter your name to submit your high score" name="name" id="name" />
+                <button id="submitScore">Submit</button>
+            </div>
+    
+
+            <script src="script.js"></script>
 </body>
 
 </html>
