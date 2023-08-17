@@ -61,4 +61,20 @@ button {
     flex-direction: column;
     align-items: center;
   }
+  #highscoreContainer{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #highscore-Score{
+    float: right;
+    font-weight: bold;
+  }
+#highscore-name {
+    display: inline-block;
+    font-weight: bold;
+}
+
   

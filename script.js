@@ -106,7 +106,7 @@ function showScore() {
 // create event listener that stores highscores with username
 submitScoreBtn.addEventListener("click", function highscore() {
 
-    if (highscoreInputName.value === "") {
+    if (highscoreInput.value === "") {
         alert("Needs valid Name")
         return false;
 
@@ -117,28 +117,28 @@ submitScoreBtn.addEventListener("click", function highscore() {
             name: currentUser,
             score: score
         };
-        endgameDiv.style.display = "none";
+        endGameDiv.style.display = "none";
         highscoreContainer.style.display = "flex";
         highscoreDiv.style.display = "block";
         endGameBtns.style.display = "flex";
 
         savedHighscores.push(currentHighscore);
-        localStorage.setItem("savedHighscores", Json.stringify(savedHJighscores));
+        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
         generateHighscores();
     }
 })
 // create function that clears the list for high scores and generates a new high score list
 function generateHighscores() {
-    highscoreDisplayName.innerHTML = "";
-    highscoreDisplayScore.innerHTML = "";
+    highscoreDisplay.innerHTML = "";
+   highscoreScore.innerHTML = "";
     var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
     for (i = 0; i < highscores.length; i++) {
         var newNameSpan = document.createElement("li");
         var newScoreSpan = document.createElement("li");
         newNameSpan.textContent = highscores[i].name;
         newScoreSpan.textContent = highscores[i].score;
-        highscoreDisplayName.appendChild(newNameSpan);
-        highscoreDisplayScore.appendChild(newScoreSpan);
+        highscoreDisplay.appendChild(newNameSpan);
+        highscoreScore.appendChild(newScoreSpan);
     }
 }
 // create function dispays high scores
@@ -154,13 +154,13 @@ function showHighscore() {
 // create function that clears all high scores
 function clearScore() {
     window.localStorage.clear();
-    highscoreDisplayName.textContent = "";
-    highscoreDisplayScore.textContent = "";
+    highscoreDisplay.textContent = "";
+    highscoreScore.textContent = "";
 }
 // create function that replays quiz
 function replayQuiz() {
     highscoreContainer.style.display = "none";
-    endgameDiv.style.display = "none";
+   endGameDiv.style.display="none";
     startQuizDiv.style.display = "flex";
     timeLeft = 60;
     score = 0;

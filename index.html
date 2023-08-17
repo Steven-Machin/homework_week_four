@@ -30,7 +30,21 @@
                 <input type="text"  placeholder="Enter your name to submit your high score" name="name" id="name" />
                 <button id="submitScore">Submit</button>
             </div>
-    
+            <div id=highscoreContainer>
+                <div id="high-scorePage">
+                    <div id="highscore-header">
+                        <h3>User name</h3>
+                        <h3>Score</h3>
+                    </div>
+                    <div id = "highscore-name"></div>
+                    <div id = "highscore-Score"></div>
+                </div>
+                <div id="endGameBtns">
+                    <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+                    <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
+                </div>
+            </div>
+            </div>
 
             <script src="script.js"></script>
 </body>
